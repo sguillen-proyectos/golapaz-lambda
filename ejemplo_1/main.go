@@ -22,12 +22,12 @@ func Handler2(ctx context.Context, event map[string]string) error {
 }
 
 func main() {
-	lambdaRuntime := os.Getenv("_AWS_LAMBDA_RUNTIME_API")
+	runLocally := os.Getenv("RUN_LOCALLY")
 	fmt.Println("Hola comunidad Go!")
 
-	if lambdaRuntime != "" {
-		lambda.Start(Handler)
+	if runLocally != "" {
+		Handler()
 		return
 	}
-	Handler()
+	lambda.Start(Handler)
 }
