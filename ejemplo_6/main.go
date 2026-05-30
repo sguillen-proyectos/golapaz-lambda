@@ -71,7 +71,7 @@ func handleWebhook(c echo.Context) error {
 	chatID := update.Message.Chat.ID
 	fmt.Printf("Received message from chat %d: %s\n", chatID, update.Message.Text)
 
-	if err := sendMessage(chatID, "Hello World!"); err != nil {
+	if err := sendMessage(chatID, "Hello World desde api gateway!"); err != nil {
 		fmt.Printf("Error sending message: %v\n", err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "failed to send message"})
 	}

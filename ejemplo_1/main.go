@@ -29,5 +29,5 @@ func main() {
 		Handler()
 		return
 	}
-	lambda.Start(Handler)
+	lambda.Start(Handler2)
 }
